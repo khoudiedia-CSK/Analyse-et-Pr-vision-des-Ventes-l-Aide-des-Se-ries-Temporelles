@@ -24,7 +24,6 @@ Utilisation du code
 Pour analyser un autre produit ou magasin, modifier les valeurs de Product ID et Store ID dans le code.
 
 
-
 Bibliothèques utilisées
 pandas : manipulation des données
 
