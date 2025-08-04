@@ -2,7 +2,6 @@ Prévision avec les séries temporelles —
 
 Partie 1 : Préparation et Visualisation
 
-
 Objectif
 
 Préparer et visualiser les données quotidiennes de ventes pour un produit spécifique dans un magasin donné, à partir d’un dataset d’inventaire de magasin de détail.
