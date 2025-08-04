@@ -1,4 +1,7 @@
-Prévision avec les séries temporelles — Partie 1 : Préparation et Visualisation
+Prévision avec les séries temporelles —
+
+Partie 1 : Préparation et Visualisation
+
 
 Objectif 
 
