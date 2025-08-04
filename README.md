@@ -23,7 +23,7 @@ Tracé de la série temporelle des ventes quotidiennes afin d’identifier tenda
 Utilisation du code
 Pour analyser un autre produit ou magasin, modifier les valeurs de Product ID et Store ID dans le code.
 
-Le graphique généré affiche les ventes totales journalières pour le produit et magasin sélectionnés.
+
 
 Bibliothèques utilisées
 pandas : manipulation des données
@@ -33,15 +33,18 @@ matplotlib : visualisation graphique
 Fichier de données
 retail_store_inventory.csv : données d’inventaire et ventes journalières des produits par magasin.
 
-Exemple de graphique
 
 Le graphique ci-dessous représente les ventes quotidiennes du produit P0001 dans le magasin S001.
 
 <img width="1044" height="459" alt="image" src="https://github.com/user-attachments/assets/79fc80da-3fb9-4f39-b7b7-104d8848a86a" />
 
 
-Prévision des ventes avec les séries temporelles — Partie 2 : Modélisation avec Prophet
+Prévision des ventes avec les séries temporelles — Partie 2 :
+
+Modélisation avec Prophet
+
 Objectif
+
 Prévoir les ventes futures quotidiennes d’un produit spécifique dans un magasin donné, à partir des données historiques, en utilisant le modèle Prophet.
 
 Étapes réalisées
