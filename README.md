@@ -34,6 +34,7 @@ Fichier de données
 retail_store_inventory.csv : données d’inventaire et ventes journalières des produits par magasin.
 
 Exemple de graphique
+
 Le graphique ci-dessous représente les ventes quotidiennes du produit P0001 dans le magasin S001.
 
 <img width="1044" height="459" alt="image" src="https://github.com/user-attachments/assets/79fc80da-3fb9-4f39-b7b7-104d8848a86a" />
