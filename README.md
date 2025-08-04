@@ -63,9 +63,7 @@ Affichage des prévisions avec les données historiques et visualisation des dif
 
 Utilisation
 Installer la bibliothèque Prophet.
-
 Adapter la période de prévision selon les besoins.
-
 Visualiser les prévisions et les composantes pour interpréter le modèle.
 
 Bibliothèques utilisées
