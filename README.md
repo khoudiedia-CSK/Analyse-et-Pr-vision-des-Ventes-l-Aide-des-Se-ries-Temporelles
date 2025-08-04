@@ -70,9 +70,7 @@ Visualiser les prévisions et les composantes pour interpréter le modèle.
 
 Bibliothèques utilisées
 pandas
-
 prophet
-
 matplotlib
 
 1. Graphique principal des prévisions
