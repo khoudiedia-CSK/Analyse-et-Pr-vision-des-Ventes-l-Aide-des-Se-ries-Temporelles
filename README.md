@@ -1,89 +1,101 @@
-Prévision avec les séries temporelles —
+# 📈 Prévision des ventes quotidiennes d’un magasin avec Prophet
 
-Partie 1 : Préparation et Visualisation
+## 🧾 Contexte du projet
 
-Objectif
+MauriShop, une enseigne de distribution commerciale située en Mauritanie, souhaite améliorer la gestion de ses stocks et optimiser ses approvisionnements.
+Pour cela, elle cherche à mettre en place un système de prévision des ventes quotidiennes de ses produits, en s’appuyant sur les données historiques enregistrées dans ses magasins.
 
-Préparer et visualiser les données quotidiennes de ventes pour un produit spécifique dans un magasin donné, à partir d’un dataset d’inventaire de magasin de détail.
+Elle dispose d’un historique détaillé des ventes par jour, par magasin et par produit.  
+L’équipe data est chargée de concevoir un modèle de prévision fiable, afin d’anticiper les quantités vendues chaque jour pour un produit spécifique dans un magasin donné.
 
-Étapes réalisées
-Chargement des données
-Lecture du fichier CSV contenant les données d’inventaire et de ventes.
+Ce projet s’inscrit dans une démarche plus large de pilotage de la chaîne logistique par la donnée, avec pour objectifs :
+- D’éviter les ruptures de stock
+- De limiter le surstockage inutile
+- D’améliorer la planification des commandes
 
-Conversion du format de date
-Transformation de la colonne Date en type datetime, pour faciliter les opérations sur les séries temporelles.
+---
 
-Filtrage des données
-Sélection des observations pour un produit (Product ID = P0001) et un magasin (Store ID = S001) spécifiques.
+## 🎯 Objectif
 
-Agrégation des ventes
-Regroupement des unités vendues (Units Sold) par date.
+Prévoir les ventes journalières d’un produit à l’aide du modèle **Prophet**, à partir des données historiques issues d’un fichier d’inventaire (`retail_store_inventory.csv`).
 
-Visualisation
-Tracé de la série temporelle des ventes quotidiennes afin d’identifier tendances et variations.
+---
 
-Utilisation du code
-Pour analyser un autre produit ou magasin, modifier les valeurs de Product ID et Store ID dans le code.
+## 🛠️ Technologies utilisées
 
+- `pandas` – manipulation de données
+- `matplotlib` – visualisation graphique
+- `prophet` – prévision de séries temporelles
 
-Bibliothèques utilisées
-pandas : manipulation des données
+  ---
 
-matplotlib : visualisation graphique
+## 📂 Structure du projet
 
-Fichier de données
-retail_store_inventory.csv : données d’inventaire et ventes journalières des produits par magasin.
+retail-forecast/
+├── retail_forecast.ipynb # Notebook Jupyter avec tout le pipeline
 
+├── data/
 
-Le graphique ci-dessous représente les ventes quotidiennes du produit P0001 dans le magasin S001.
+│ └── retail_store_inventory.csv # Données brutes
 
-<img width="1044" height="459" alt="image" src="https://github.com/user-attachments/assets/79fc80da-3fb9-4f39-b7b7-104d8848a86a" />
+├── outputs/
 
+│ ├── forecast_chart.png # Graphique de la prédiction
 
-Prévision des ventes avec les séries temporelles — Partie 2 :
+│ └── forecast_components.png # Graphique des composantes Prophet
 
-Modélisation avec Prophet
+└── README.md # Description du projet
 
-Objectif
+## 🔎 Partie 1 – Analyse exploratoire
 
-Prévoir les ventes futures quotidiennes d’un produit spécifique dans un magasin donné, à partir des données historiques, en utilisant le modèle Prophet.
+- Chargement et nettoyage du fichier CSV
+- Conversion de la colonne `Date` au format `datetime`
+- Filtrage pour un produit (`Product ID = P0001`) et un magasin (`Store ID = S001`)
+- Agrégation des ventes (`Units Sold`) par jour
+- Visualisation de la série temporelle des ventes quotidiennes
 
-Étapes réalisées
-Préparation des données
-Adaptation des colonnes pour correspondre aux exigences du modèle Prophet.
+📌 Exemple de graphique :
 
-Création et entraînement du modèle
-Instanciation du modèle Prophet et apprentissage sur les données historiques.
+![Time Series](https://github.com/user-attachments/assets/79fc80da-3fb9-4f39-b7b7-104d8848a86a)
 
-Prédiction des ventes futures
-Génération des dates futures et prédiction des ventes pour ces dates.
+---
 
-Visualisation des résultats
-Affichage des prévisions avec les données historiques et visualisation des différentes composantes (tendance, saisonnalité, etc.).
+## 🤖 Partie 2 – Modélisation avec Prophet
 
-Utilisation
-Installer la bibliothèque Prophet.
-Adapter la période de prévision selon les besoins.
-Visualiser les prévisions et les composantes pour interpréter le modèle.
+- Préparation des données au format attendu par Prophet (`ds`, `y`)
+- Création et entraînement du modèle Prophet
+- Génération de 30 jours de prévision future
+- Visualisation de la courbe des prévisions et des composantes
 
-Bibliothèques utilisées
-pandas
-prophet
-matplotlib
+📈 Résultats visuels :
 
-1. Graphique principal des prévisions
+**1. Prédictions avec intervalle de confiance :**
 
-Affiche les données historiques (observées) et la courbe des prévisions futures.
+![Forecast](https://github.com/user-attachments/assets/7cade96b-72f4-4ac6-9913-3281a128f77c)
 
-Montre aussi l’intervalle d’incertitude (bandes de confiance).
+**2. Composantes du modèle :**
 
-<img width="999" height="401" alt="image" src="https://github.com/user-attachments/assets/7cade96b-72f4-4ac6-9913-3281a128f77c" />
+- Tendance
+- Saison hebdomadaire
+- (Effets calendaires possibles)
 
-2. Graphique des composantes
+![Components](https://github.com/user-attachments/assets/6a20f002-300f-4cd4-9881-9d02ec7cdb07)
 
-Montre la décomposition de la série en tendances, saisonnalités (jour de la semaine, année, etc.) et éventuellement effets des jours fériés si ajoutés.
+---
 
-Permet de comprendre ce que le modèle retient dans la série.
+## 💡 Pour adapter le projet
 
-<img width="1007" height="448" alt="image" src="https://github.com/user-attachments/assets/6a20f002-300f-4cd4-9881-9d02ec7cdb07" />
+Tu peux facilement réutiliser le code pour :
+- Un autre **produit** → changer `Product ID`
+- Un autre **magasin** → changer `Store ID`
+- Une autre **période de prévision** → modifier la durée dans `make_future_dataframe()`
+
+---
+
+## 🧠 Ce que j’ai appris
+
+- Préparation et agrégation de données temporelles
+- Visualisation efficace d’une série chronologique
+- Utilisation du modèle Prophet pour la prévision
+- Interprétation des tendances et saisonnalités
 
